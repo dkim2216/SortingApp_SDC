@@ -1,0 +1,9 @@
+{
+  "name": "7ESortVerification",
+  "short_name": "7ESortVerification",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0D1B4B",
+  "start_url": "/",
+  "icons": []
+}
