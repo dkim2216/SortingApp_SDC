@@ -202,16 +202,16 @@ export default function CheckScreen({
           )
         })}
 
-        {/* Send Route Report button */}
-        <button className="btn-tap" onClick={() => setShowReportModal(true)}
-          style={{ width:'100%',padding:'14px',marginTop:6,border:'none',borderRadius:14,color:'#fff',
-            fontFamily:"'Rajdhani',sans-serif",fontWeight:700,fontSize:17,
-            background:allDone
-              ? `linear-gradient(135deg,${C.green},#059669)`
-              : `linear-gradient(135deg,${C.navy},#1a3a7c)`,
-            boxShadow:allDone?`0 4px 16px ${C.green}40`:`0 4px 16px ${C.navy}40` }}>
-          📧 {allDone ? 'SEND ROUTE REPORT' : 'COMPLETE ROUTE & SEND'}
-        </button>
+        {/* Send Route Report — only visible once ALL stores are complete */}
+        {allDone && (
+          <button className="btn-tap" onClick={() => setShowReportModal(true)}
+            style={{ width:'100%',padding:'14px',marginTop:6,border:'none',borderRadius:14,color:'#fff',
+              fontFamily:"'Rajdhani',sans-serif",fontWeight:700,fontSize:17,
+              background:`linear-gradient(135deg,${C.green},#059669)`,
+              boxShadow:`0 4px 16px ${C.green}40` }}>
+            📧 SEND ROUTE REPORT
+          </button>
+        )}
 
         {showReportModal && (
           <RouteReportModal
